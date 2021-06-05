@@ -1,0 +1,29 @@
+.partiners{
+  width: 300px;
+  height: 350px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(196, 136, 136, 0.25);
+  border-radius: 5px;
+}
+.partiners:first-child{
+  margin: 0;
+}
+.img-partiners{
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-partiner{
+  width: 280px;
+  padding-left: 15px;
+  font: 500 16px Roboto, sans-serif;
+  padding-top: 70px;
+
+}
+.text-partiner p:last-child{
+  color: #0B74BC;
+}
+.text-partiner p:first-child{
+  color: #0B74BC;
+}
