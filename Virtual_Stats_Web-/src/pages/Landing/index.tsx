@@ -12,6 +12,7 @@ import logoGooglePlay from '../../assets/images/google-play.png';
 import miniLogo from '../../assets/images/miniLogo.png';
 import logoWhite from '../../assets/images/logoFullWhite.png';
 import api from '../../services/api';
+import { idText } from 'typescript';
 
 interface Hospital {
   id: number;
@@ -38,24 +39,57 @@ const Landing: React.FC = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
-    async function LoadData() {
-      const response = await api.get('/hospitals');
+    //async function LoadData() {
+    //const response = await api.get('/hospitals');
 
-      const hospitalArray = response.data.map(
-        (hospital: { id: number; nome: string; endereco: string }) => {
-          const { id, nome, endereco } = hospital;
-          return {
-            id,
-            name: nome,
-            locale: endereco,
-          };
-        },
-      );
+    //const hospitalArray = response.data.map(
+    //(hospital: { id: number; nome: string; endereco: string }) => {
+    //const { id, nome, endereco } = hospital;
+    //return {
+    //id,
+    //name: nome,
+    // locale: endereco,
+    //};
+    // },
+    // );
+    const hospitalArray: Hospital[] = [
+      {
+        id: 1,
+        name: 'Samaritano',
+        locale: 'Av. Brasil, 1110 - Santo Antonio, Americana, 13465-000',
+      },
+      {
+        id: 2,
+        name: 'Beneficência Portuguesa',
+        locale: 'R. Onze de Agosto, 557 - Centro, Campinas - SP, 13013-101',
+      },
+      {
+        id: 3,
+        name: 'Unimed',
+        locale: 'R. do Rosário, 1870 - Centro, Piracicaba - SP, 13400-186',
+      },
+      {
+        id: 4,
+        name: 'Santa Isabel',
+        locale: 'Av. Independência, 953 - Alto, Piracicaba - SP',
+      },
+      {
+        id: 5,
+        name: 'Irmandade da Santa Casa',
+        locale: 'Av Barão de Serra Negra Nova, Piracicaba - SP, 13405-121',
+      },
+      {
+        id: 5,
+        name: 'São Francisco saúde',
+        locale:
+          'Av. Conde do Pinhal - Vila Rezende, Piracicaba - SP, 13414-042',
+      },
+    ];
 
-      setHospitaisList(hospitalArray);
-    }
+    setHospitaisList(hospitalArray);
+    //}
 
-    LoadData();
+    //LoadData();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
